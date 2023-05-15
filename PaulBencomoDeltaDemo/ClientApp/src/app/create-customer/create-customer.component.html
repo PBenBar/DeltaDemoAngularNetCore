@@ -1,0 +1,13 @@
+<h1>Create Customer</h1>
+<form #f="ngForm">
+  <label>Name</label>
+  <input type="text" name="Name" ngModel />
+  <label>Telephone</label>
+  <input type="text" name="Telephone" ngModel />
+  <label>Email</label>
+  <input type="text" name="Email" ngModel />
+  <label>Notes</label>
+  <input type="text" name="Notes" ngModel />
+  <button (click)="clickedit(f)">Send</button>
+</form>
+

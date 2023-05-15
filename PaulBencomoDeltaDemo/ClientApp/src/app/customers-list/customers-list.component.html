@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!cList?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cList.length">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cList of cList">
+      <td>{{ cList.name }}</td>
+      <td>{{ cList.telephone }}</td>
+      <td>{{ cList.email }}</td>
+      <td>{{ cList.notes }}</td>
+    </tr>
+  </tbody>
+</table>
