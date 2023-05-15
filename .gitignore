@@ -2,5 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/PaulBencomoDeltaDemo
-/.vs/Testing git delta demo/v17
+/.vs
