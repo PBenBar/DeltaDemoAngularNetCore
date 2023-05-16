@@ -15,14 +15,20 @@
 
   <label>Telephone</label>
   <input type="text" name="Telephone" ngModel pattern="[+][0-9]{1,3}[-][0-9]{8,12}"
-         placeholder="+XXX-XXXXXXXXX" #Telephone="ngModel"/>
+         placeholder="+XXX-XXXXXXXXX" required #Telephone="ngModel"/>
   <div class="alert" *ngIf="Telephone.invalid && (Telephone.dirty || Telephone.touched)">
     Telephone format invalid
+    <div *ngIf="Telephone.errors?.['required']">
+      Telephone is required.
+    </div>
   </div>
   <label>Email</label>
-  <input type="text" name="Email" [email]="true" ngModel #Email="ngModel" />
+  <input type="text" name="Email" [email]="true" ngModel required #Email="ngModel" />
   <div class="alert" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
     Email format invalid
+    <div *ngIf="Email.errors?.['required']">
+      Email is required.
+    </div>
   </div>
 
   <label>Notes</label>
