@@ -1,13 +1,33 @@
 <h1>Create Customer</h1>
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="clickedit(f)">
   <label>Name</label>
-  <input type="text" name="Name" ngModel />
+  <input type="text" name="Name" id="Name" required minlength="6" ngModel #Name="ngModel" />
+  <div *ngIf="Name.invalid && (Name.dirty || Name.touched)"
+       class="alert">
+    <div *ngIf="Name.errors?.['required']">
+      Name is required.
+    </div>
+    <div *ngIf="Name.errors?.['minlength']">
+      Name must be at least 6 characters long.
+    </div>
+
+  </div>
+
   <label>Telephone</label>
-  <input type="text" name="Telephone" ngModel />
+  <input type="text" name="Telephone" ngModel pattern="[+][0-9]{1,3}[-][0-9]{8,12}"
+         placeholder="+XXX-XXXXXXXXX" #Telephone="ngModel"/>
+  <div class="alert" *ngIf="Telephone.invalid && (Telephone.dirty || Telephone.touched)">
+    Telephone format invalid
+  </div>
   <label>Email</label>
-  <input type="text" name="Email" ngModel />
+  <input type="text" name="Email" [email]="true" ngModel #Email="ngModel" />
+  <div class="alert" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+    Email format invalid
+  </div>
+
   <label>Notes</label>
   <input type="text" name="Notes" ngModel />
-  <button (click)="clickedit(f)">Send</button>
+
+  <button type="submit" [disabled]="!f.valid">Send</button>
 </form>
 

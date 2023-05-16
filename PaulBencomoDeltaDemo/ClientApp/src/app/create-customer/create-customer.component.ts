@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -18,6 +18,9 @@ export class CreateCustomer {
     }, error => console.error(error));
 
     console.log(f.value);
+  }
+
+  ngOnInit() {
   }
 }
 

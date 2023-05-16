@@ -5,3 +5,17 @@ form{
 forn label, form input{
     width:100%
 }
+.alert {
+  margin: 0;
+  padding: 0 15px;
+  font-size: small;
+  color: red;
+}
+
+form button {
+  float: right;
+  margin: 10px 0;
+  background: aqua;
+  border-radius: 5px;
+  border-width: 1px;
+}
