@@ -34,7 +34,11 @@ namespace PaulBencomoDeltaDemo.Controllers
                 return _customers;
         }
 
-
+        /// <summary>
+        /// To Create a new Customer
+        /// </summary>
+        /// <param name="Model">new Customer, Id will be calculated on server  side</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Create")]
         public bool Create(Customer Model)
